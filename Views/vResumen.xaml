@@ -1,0 +1,42 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="emoreiraExamen.Views.vResumen"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Fondo}" Title="Resumen">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="12">
+            <Label x:Name="lblUsuarioConectado" Style="{StaticResource EtiquetaGlobal}"
+                   TextColor="{StaticResource Morado}" FontAttributes="Bold" />
+            <Label Text="RESUMEN" Style="{StaticResource TituloGlobal}"
+                   TextColor="{StaticResource Azul}" FontSize="22" />
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto,Auto"
+                  ColumnDefinitions="140,*" RowSpacing="12" ColumnSpacing="8" Padding="7">
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="0" Grid.Column="1" x:Name="lblNombre" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Apellido" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="1" Grid.Column="1" x:Name="lblApellido" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="2" Grid.Column="0" Text="Edad" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="2" Grid.Column="1" x:Name="lblEdad" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="3" Grid.Column="0" Text="Fecha de inicio" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="3" Grid.Column="1" x:Name="lblFecha" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="4" Grid.Column="0" Text="Plan" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="4" Grid.Column="1" x:Name="lblPlan" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="5" Grid.Column="0" Text="Casillero" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="5" Grid.Column="1" x:Name="lblCasillero" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="6" Grid.Column="0" Text="Monto inicial" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="6" Grid.Column="1" x:Name="lblMontoInicial" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="7" Grid.Column="0" Text="Pago mensual" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="7" Grid.Column="1" x:Name="lblPagoMensual" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="8" Grid.Column="0" Text="Pago Total" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" />
+                <Label Grid.Row="8" Grid.Column="1" x:Name="lblPagoTotal" Style="{StaticResource EtiquetaGlobal}" FontAttributes="Bold" TextColor="{StaticResource Azul}" />
+            </Grid>
+            <Button Text="Exportar todos los datos a TXT"
+                    Style="{StaticResource BotonGlobal}" Clicked="Exportar_Clicked" />
+            <Button Text="Nuevo registro" Style="{StaticResource BotonSecundario}"
+                    Clicked="NuevoRegistro_Clicked" />
+            <Button Text="Cerrar sesión" Style="{StaticResource BotonSecundario}"
+                    Clicked="CerrarSesion_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

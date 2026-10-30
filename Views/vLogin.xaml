@@ -1,0 +1,34 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="emoreiraExamen.Views.vLogin"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Fondo}"
+             Title="Login">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="10" VerticalOptions="Center">
+            <Image Source="gym_logo.png" HeightRequest="170" Aspect="AspectFit" />
+            <Label Text="LOGIN" Style="{StaticResource TituloGlobal}"
+                   TextColor="{StaticResource Morado}" FontSize="26" />
+            <Label Text="Registro de socios del gimnasio"
+                   Style="{StaticResource EtiquetaGlobal}" HorizontalTextAlignment="Center" />
+            <Grid RowDefinitions="Auto,Auto,Auto" ColumnDefinitions="105,*"
+                  RowSpacing="12" ColumnSpacing="8" Margin="0,22,0,0">
+                <Label Grid.Row="0" Grid.Column="0" Text="Usuario"
+                       Style="{StaticResource EtiquetaGlobal}" VerticalTextAlignment="Center" />
+                <Entry Grid.Row="0" Grid.Column="1" x:Name="txtUsuario"
+                       Placeholder="Escribir usuario" Style="{StaticResource CampoGlobal}" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Contraseña"
+                       Style="{StaticResource EtiquetaGlobal}" VerticalTextAlignment="Center" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="txtContrasena"
+                       Placeholder="Escribir contraseña" IsPassword="True"
+                       Style="{StaticResource CampoGlobal}" />
+                <Button Grid.Row="2" Grid.Column="0" Grid.ColumnSpan="2"
+                        Text="Iniciar sesión" Style="{StaticResource BotonGlobal}"
+                        Clicked="IniciarSesion_Clicked" />
+            </Grid>
+            <Button Text="Acerca de" Margin="0,10,0,0"
+                    Style="{StaticResource BotonSecundario}" Clicked="AcercaDe_Clicked" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,63 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="emoreiraExamen.Views.vRegistro"
+             NavigationPage.HasNavigationBar="False"
+             BackgroundColor="{StaticResource Fondo}" Title="Registro">
+    <ScrollView>
+        <VerticalStackLayout Padding="20" Spacing="13">
+            <Label x:Name="lblUsuarioConectado" Style="{StaticResource EtiquetaGlobal}"
+                   FontAttributes="Bold" TextColor="{StaticResource Morado}" />
+            <Label Text="REGISTRO" Style="{StaticResource TituloGlobal}"
+                   TextColor="{StaticResource Azul}" FontSize="22" />
+            <Label Text="Datos del socio" Style="{StaticResource EtiquetaGlobal}" />
+            <Grid RowDefinitions="Auto,Auto" ColumnDefinitions="*,*,*" ColumnSpacing="7" RowSpacing="6">
+                <Label Grid.Row="0" Grid.Column="0" Text="Nombre" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="0" Grid.Column="1" Text="Apellido" Style="{StaticResource EtiquetaGlobal}" />
+                <Label Grid.Row="0" Grid.Column="2" Text="Edad" Style="{StaticResource EtiquetaGlobal}" />
+                <Entry Grid.Row="1" Grid.Column="0" x:Name="txtNombre" Placeholder="Nombre"
+                       Style="{StaticResource CampoGlobal}" TextChanged="DatoModificado" />
+                <Entry Grid.Row="1" Grid.Column="1" x:Name="txtApellido" Placeholder="Apellido"
+                       Style="{StaticResource CampoGlobal}" TextChanged="DatoModificado" />
+                <Entry Grid.Row="1" Grid.Column="2" x:Name="txtEdad" Placeholder="16+" Keyboard="Numeric"
+                       Style="{StaticResource CampoGlobal}" TextChanged="DatoModificado" />
+            </Grid>
+            <Label Text="Membresía anual: $1.200,00  •  Inicial: $120 a $600"
+                   Style="{StaticResource EtiquetaGlobal}" />
+            <Grid RowDefinitions="Auto,Auto,Auto,Auto,Auto" ColumnDefinitions="*,*"
+                  RowSpacing="12" ColumnSpacing="10">
+                <Label Grid.Row="0" Grid.Column="0" Text="Fecha de inicio"
+                       Style="{StaticResource EtiquetaGlobal}" VerticalTextAlignment="Center" />
+                <DatePicker Grid.Row="0" Grid.Column="1" x:Name="dpFechaInicio"
+                            DateSelected="DatoModificado" Format="dd/MM/yyyy" />
+                <Label Grid.Row="1" Grid.Column="0" Text="Plan"
+                       Style="{StaticResource EtiquetaGlobal}" VerticalTextAlignment="Center" />
+                <Picker Grid.Row="1" Grid.Column="1" x:Name="pkPlan"
+                        Title="Seleccione plan" SelectedIndexChanged="DatoModificado">
+                    <Picker.Items>
+                        <x:String>Musculación</x:String>
+                        <x:String>Cardio</x:String>
+                        <x:String>Crossfit</x:String>
+                        <x:String>Full</x:String>
+                    </Picker.Items>
+                </Picker>
+                <Label Grid.Row="2" Grid.Column="0" Text="Casillero ($10/cuota)"
+                       Style="{StaticResource EtiquetaGlobal}" VerticalTextAlignment="Center" />
+                <Switch Grid.Row="2" Grid.Column="1" x:Name="swCasillero" HorizontalOptions="Start"
+                        Toggled="DatoModificado" OnColor="{StaticResource Azul}" />
+                <Label Grid.Row="3" Grid.Column="0" Text="Monto inicial ($)"
+                       Style="{StaticResource EtiquetaGlobal}" VerticalTextAlignment="Center" />
+                <Entry Grid.Row="3" Grid.Column="1" x:Name="txtMontoInicial"
+                       Placeholder="120 a 600" Keyboard="Numeric"
+                       Style="{StaticResource CampoGlobal}" TextChanged="DatoModificado" />
+                <Button Grid.Row="4" Grid.Column="0" Text="Calcular pago mensual"
+                        FontSize="12" Style="{StaticResource BotonSecundario}" Clicked="Calcular_Clicked" />
+                <Entry Grid.Row="4" Grid.Column="1" x:Name="txtPagoMensual"
+                       Placeholder="Pago mensual" IsReadOnly="True"
+                       Style="{StaticResource CampoGlobal}" />
+            </Grid>
+            <Button Text="Ver Resumen" Style="{StaticResource BotonGlobal}"
+                    Clicked="VerResumen_Clicked" Margin="0,10,0,0" />
+        </VerticalStackLayout>
+    </ScrollView>
+</ContentPage>

@@ -1,0 +1,39 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<Application xmlns="http://schemas.microsoft.com/dotnet/2021/maui"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="emoreiraExamen.App">
+    <Application.Resources>
+        <ResourceDictionary>
+            <Color x:Key="Morado">#6834B6</Color>
+            <Color x:Key="Azul">#1767BA</Color>
+            <Color x:Key="TextoPrincipal">#233049</Color>
+            <Color x:Key="Fondo">#F6F8FC</Color>
+            <Style x:Key="TituloGlobal" TargetType="Label">
+                <Setter Property="TextColor" Value="{StaticResource TextoPrincipal}" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="HorizontalTextAlignment" Value="Center" />
+            </Style>
+            <Style x:Key="EtiquetaGlobal" TargetType="Label">
+                <Setter Property="FontSize" Value="13" />
+                <Setter Property="TextColor" Value="{StaticResource TextoPrincipal}" />
+            </Style>
+            <Style x:Key="CampoGlobal" TargetType="Entry">
+                <Setter Property="FontSize" Value="14" />
+                <Setter Property="HeightRequest" Value="46" />
+                <Setter Property="TextColor" Value="{StaticResource TextoPrincipal}" />
+                <Setter Property="BackgroundColor" Value="#EAF0F7" />
+            </Style>
+            <Style x:Key="BotonGlobal" TargetType="Button">
+                <Setter Property="BackgroundColor" Value="{StaticResource Morado}" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="14" />
+                <Setter Property="FontAttributes" Value="Bold" />
+                <Setter Property="FontSize" Value="15" />
+                <Setter Property="MinimumHeightRequest" Value="46" />
+            </Style>
+            <Style x:Key="BotonSecundario" TargetType="Button" BasedOn="{StaticResource BotonGlobal}">
+                <Setter Property="BackgroundColor" Value="{StaticResource Azul}" />
+            </Style>
+        </ResourceDictionary>
+    </Application.Resources>
+</Application>
